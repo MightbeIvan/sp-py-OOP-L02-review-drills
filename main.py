@@ -8,7 +8,21 @@ Make methods to:
 
 Create a Book object and test your class and all its methods.
 '''
+class Book:
+    def  __init__(self,title,author,genre,pages):
+        self.title = title
+        self.author = author
+        self.genre = genre
+        self.pages = pages
 
+    def read(self):
+        print(f"{self.title} is being read!")
+
+    def __str__(self):
+        print(f"{self.title} is a {self.genre} book written by {self.author}.")
+
+    def describe(self):
+            print(f"{self.title} is a {self.genre} book written by {self.author}.")
 
 
 
@@ -25,7 +39,18 @@ Taylor (Database Administrator, $70000)
 
 Print each object. (You'll need the __str__() method.)
 '''
+class Employee:
+    def __init__(self,name,job_title,salary):
+        self.name = name
+        self.job_title = job_title
+        self.salary = salary
 
+    def __str__(self):
+        print(f"{self.name} is a {self.job_title} and thier salary is {self.salary}")
+
+Alex = Employee("Alex","Software Designer", 65000)
+Jamie = Employee("Jamie","Web Designer", 58000)
+Taylor = Employee("Alex","Database Administrator", 70000)
 
 
 
@@ -41,8 +66,32 @@ Make methods to:
 
 Create a GameCharacter object and test the class and all its methods.
 '''
+class GameCharacter:
+    def __init__(self,name,level,health,weapon,speed):
+        self.name = name
+        self.level = level
+        self.health = health
+        self.weapon = weapon
+        self.speed = speed
+
+    def __str__(self):
+        print(f"{self.name}")
+        print(f"Level : {self.level}")
+        print(f"Health : {self.health}")
+        print(f'Weapon : {self.weapon}')
+        print(f"Speed : {self.speed}")
+
+    def levelup(self):
+        self.level += 1
+
+    def heal(self):
+        self.health += 10
+
+    def takeDamage(self):
+        self.health -= 10
 
 
+Player1 = GameCharacter("Ivan", 100, 100, "Sword", "100 mph")
 
 
 '''
@@ -58,8 +107,20 @@ Then, create a LIST of Song objects for the following songs:
 Print the title and artist of each song using a for loop.
 '''
 
+class Song:
+    def __init__(self,title,artist,year):
+        self.title = title
+        self.artist = artist 
+        self.year = year
 
+song1 = Song("Blinding Lights", "The Weekend", 2020)
+song2 = Song("Anti-Hero", "Taylor Swift", 2022)
+song3 = Song("Flowers", "Miley Cyrus", 2023)
 
+songs = [song1,song2,song3]
+
+for song in songs:
+    print(song)
 
 
 '''
@@ -88,3 +149,5 @@ After each deposit, display the current balance.
 Then withdraw $50 two times and display the balance after
 each withdrawal.
 '''
+
+
