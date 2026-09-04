@@ -107,20 +107,23 @@ Then, create a LIST of Song objects for the following songs:
 Print the title and artist of each song using a for loop.
 '''
 
-class Song:
-    def __init__(self,title,artist,year):
-        self.title = title
-        self.artist = artist 
-        self.year = year
+# class Song:
+#     def __init__(self,title,artist,year):
+#         self.title = title
+#         self.artist = artist 
+#         self.year = year
 
-song1 = Song("Blinding Lights", "The Weekend", 2020)
-song2 = Song("Anti-Hero", "Taylor Swift", 2022)
-song3 = Song("Flowers", "Miley Cyrus", 2023)
+#     def __str__(self):
+#         return(f"The song {song.title} was made by {song.artist} in the year of {song.year} ")
 
-songs = [song1,song2,song3]
+# song1 = Song("Blinding Lights", "The Weekend", 2020)
+# song2 = Song("Anti-Hero", "Taylor Swift", 2022)
+# song3 = Song("Flowers", "Miley Cyrus", 2023)
 
-for song in songs:
-    print(song)
+# songs = [song1,song2,song3]
+
+# for song in songs:
+#     print(song)
 
 
 '''
@@ -154,14 +157,23 @@ class BankAccount:
         self.name = name
         self.balance = balance
 
-    def deposit(self):
-        self.deposit += self.balance
-        print(self.balance)
+    def __str__(self):
+        print(f"{self.name}'s Account has a total of ${self.balance} in the account.")
 
-    def withdrawal(self):
-        self.withdrawal -= self.balance
+    def deposit(self,amount):
+        self.balance += amount
+
+
+    def withdrawal(self,amount):
+        self.balance -= amount
+
 
     def get_balance(self):
-        print(self.balance)
+        return(f"${self.balance}")
+
     
-Checkings = BankAccount("Ivan's bank", 500)
+checkings = BankAccount("Ivan's bank", 500)
+
+for x in range(3):
+    checkings.deposit(100)
+    print(checkings.get_balance())
