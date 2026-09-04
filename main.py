@@ -149,5 +149,19 @@ After each deposit, display the current balance.
 Then withdraw $50 two times and display the balance after
 each withdrawal.
 '''
+class BankAccount:
+    def __init__(self,name,balance):
+        self.name = name
+        self.balance = balance
 
+    def deposit(self):
+        self.deposit += self.balance
+        print(self.balance)
 
+    def withdrawal(self):
+        self.withdrawal -= self.balance
+
+    def get_balance(self):
+        print(self.balance)
+    
+Checkings = BankAccount("Ivan's bank", 500)
